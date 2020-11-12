@@ -1,0 +1,20 @@
+{% extends 'basefile.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+
+{% block body %}
+    <h1>Add new book</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.name }}<br>
+        {{ form.owner }}<br>
+
+        <button type="submit" class="btn-success">Add</button>
+
+        <span>{{ error }}</span>
+
+    </form>
+{% endblock %}

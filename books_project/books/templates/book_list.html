@@ -1,0 +1,24 @@
+{% extends 'basefile.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+
+{% block body %}
+    {% if books %}
+        <h1>Book list</h1>
+        {% for el in books %}
+            <div class="alert alert-warning mt-2">
+                <h3>{{ el.name }}</h3>
+                <p>{{ el.owner }}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>Empty list</p>
+    {% endif %}
+{% endblock %}
+
+
+
+
